@@ -6,6 +6,15 @@ from SMC import meanSMCP
 from LMC import c, d
 
 #LMC derived relations
-(c * meanSMCP + d)
-(c * ####### + d)
+print(c * meanSMCP + d)
 
+def LMCrel(meanlogP):
+  (c * meanlogP + d)
+  (
+
+
+#SMC derived relations
+
+
+
+#GB derived relations
