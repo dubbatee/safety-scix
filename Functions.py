@@ -14,4 +14,3 @@ def DMSMC(Imag):
 def DMLMC(Imag): 
     print(Imag + 5*np.log10(DistLMC/10))
 
-DMLMC(15)
