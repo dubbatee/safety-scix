@@ -5,4 +5,7 @@ import statistics
 from SMC import meanSMCP
 from LMC import c, d
 
-print(c * meanSMCP + d)
+#LMC derived relations
+(c * meanSMCP + d)
+(c * ####### + d)
+
