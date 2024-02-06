@@ -12,13 +12,16 @@ df = pd.read_csv ('lmcdata.csv')
 df.columns =['ID', 'RA', 'Decl', 'I', 'P_1', 'dP_1', 'ID_OGLE_IV', 'REMARKS']
 
 def DMLMC(I): 
-    return(I + 5*np.log10(DistLMC/10))
+    return(I - 5*np.log10(DistLMC/10))
 
 def LMCP(p):
     return(np.log10(p))
 
 absM = DMLMC(df['I'])
 logP = LMCP(df['P_1'])
+
+meanLMCP = statistics.mean(logP)
+meanLMCI = statistics.mean(df['I'])
 
 #plotting values using matplotlib
 
