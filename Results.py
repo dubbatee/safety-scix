@@ -63,3 +63,6 @@ def LMCperror(dist):
 
 SMCperror(meanSMCdist)  #distance + error of the average calculated SMC distances
 LMCperror(meanLMCdist)  #distance + error of the average calculated LMC distances
+print(SMCperror(LMCdist(meanSMCI, meanSMCP))
+print(SMCperror(SMCdist(meanLMCI, meanLMCP))
+
