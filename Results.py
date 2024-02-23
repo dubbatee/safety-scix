@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import statistics
-from SMC import meanSMCP, meanSMCI, a, b, dfsmc
-from LMC import c, d, meanLMCI, meanLMCP, df
+from SMC import meanSMCP, meanSMCI, a, b, dfsmc, g, h
+from LMC import c, d, meanLMCI, meanLMCP, df, e ,f
 
 DistSMC = 62440
 DistLMC = 49590
@@ -63,6 +63,21 @@ def LMCperror(dist):
 
 SMCperror(meanSMCdist)  #distance + error of the average calculated SMC distances
 LMCperror(meanLMCdist)  #distance + error of the average calculated LMC distances
-print(SMCperror(LMCdist(meanSMCI, meanSMCP))
-print(SMCperror(SMCdist(meanLMCI, meanLMCP))
 
+
+#bolometric correction calculation results
+
+def bolodistlmc(mbol, logP):
+    var1 = (((g) * logP) + h)
+    var2 = ((mbol) - var1) / 5
+    var3 = 10 * 10 ** var2
+    return statistics.median(var3)
+
+def bolodistsmc(mbol, logP):
+    var1 = (((e) * logP) + f)
+    var2 = ((mbol) - var1) / 5
+    var3 = 10 * 10 ** var2
+    return statistics.median(var3)
+
+print(bolodistsmc(dfsmc['mbol'], np.log10(dfsmc['P_1'])))
+print(bolodistlmc(df['mbol'], np.log10(df['P_1'])))
